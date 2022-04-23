@@ -98,22 +98,24 @@ This code does not conform to the expected data type to return.
 
 2. Okay, then what about we return something that conforms to the expected data type?
 
-```python
+<code>
 try:
       data = call_api(school, class_nu, attrs)
       return cast(List[Dict[str, str]], data)
 except Exception as err:
       return cast(List[Dict[str, str]], None)
-```
+</code>
 
 This could be misleading because the API may return `None`.
 Takeaways
 Avoid returning something arbitrary (i.e. `-1`, `None`, `""` ), but raise an exception, because returning such values can be misleading
 Raise an exception that is broad enough, when a third-party API specification is not clear. It should be ready to log whatever API returns.
 
+[link](http://google.com)
+
 <h3> Resources </h3>
-<ul>
+<l>
 <li> Intellectual hints: my colleague M. </li>
-<li> Photo by Andrea Piacquadio from Pexels [Link](https://medium.com/r/?url=https%3A%2F%2Fwww.pexels.com%2Fphoto%2Fadult-surprised-executive-man-using-computer-beside-ethnic-colleague-in-open-space-office-3755700%2F) </li>
-<li> Icon in the figure: Server icons created by Pixel perfect Flaticon [Link](https://medium.com/r/?url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icons%2Fserver) </li> 
-</ul>
+<li> Photo by Andrea Piacquadio from Pexels <a href="https://medium.com/r/?url=https%3A%2F%2Fwww.pexels.com%2Fphoto%2Fadult-surprised-executive-man-using-computer-beside-ethnic-colleague-in-open-space-office-3755700%2F"> link </a> </li>
+<li> Icon in the figure: Server icons created by Pixel perfect Flaticon <a href="https://medium.com/r/?url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icons%2Fserver"> link </a> </li> 
+</l>
