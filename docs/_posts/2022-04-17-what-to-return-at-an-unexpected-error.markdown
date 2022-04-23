@@ -1,7 +1,7 @@
 ---
-layout: post
-title:  "What to Return at an Unexpected Error from API"
-date:   2022-04-17 00:00:00 +0200
+layout: single
+title: "What to Return at an Unexpected Error from API"
+date: 2022-04-17 00:00:00 +0200
 categories: clean-code
 ---
 
@@ -39,6 +39,7 @@ class ApiException(Exception):
 ```
 
 3. Raise the Exception in the component calling the API (`client.py`) so that the program fails instantly when given an error
+
 ```
 # client.pyfrom typing import Any
 from typing import cast
