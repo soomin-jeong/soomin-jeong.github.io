@@ -28,6 +28,7 @@ how the function handles the error is written in scalable architecture
 
 ```python
 # api_exception.py
+
 from typing import List
 class ApiException(Exception):
     def __init__(self, school: str, class_num: int, attrs=List[str]):
@@ -41,7 +42,9 @@ class ApiException(Exception):
 3. Raise the Exception in the component calling the API (`client.py`) so that the program fails instantly when given an error
 
 ```python
-# client.pyfrom typing import Any
+# client.py
+
+from typing import Any
 from typing import cast
 from typing import Dict
 from typing import List
@@ -78,6 +81,7 @@ class APIClient:
 import logging
 logger = logging.getLogger(__name__)
 ...
+
 def load_from_api(
         self, school: str, class_num: int, attrs: List[str]
     ) -> List[Dict[str, Any]]:        
