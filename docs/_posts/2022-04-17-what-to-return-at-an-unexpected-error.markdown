@@ -26,7 +26,7 @@ how the function handles the error is written in scalable architecture
 1. Create an exception class (api_exception.py) away from the one calling the API
 2. Add an exception message in the `__init__` so that the main Exception class can handle the logging
 
-```
+```python
 # api_exception.py
 from typing import List
 class ApiException(Exception):
@@ -40,7 +40,7 @@ class ApiException(Exception):
 
 3. Raise the Exception in the component calling the API (`client.py`) so that the program fails instantly when given an error
 
-```
+```python
 # client.pyfrom typing import Any
 from typing import cast
 from typing import Dict
@@ -73,7 +73,7 @@ class APIClient:
 <h2> Don'ts </h2>
 1. Leave the log simply in the API-calling component and return something unexpected
 
-```
+```python
 ...
 import logging
 logger = logging.getLogger(__name__)
@@ -94,7 +94,7 @@ This code does not conform to the expected data type to return.
 
 2. Okay, then what about we return something that conforms to the expected data type?
 
-```
+```python
 try:
       data = call_api(school, class_nu, attrs)
       return cast(List[Dict[str, str]], data)
